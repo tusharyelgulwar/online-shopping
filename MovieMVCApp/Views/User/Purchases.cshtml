@@ -1,0 +1,131 @@
+@model IEnumerable<ApplicationCore.Models.PurchaseMovieCardModel>
+
+@{
+    ViewData["Title"] = "My Purchases";
+}
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+
+<style>
+    .fact-pill {
+        background-color: #1f1e1e;
+        color: #fff;
+        padding: 4px 10px;
+        border-radius: 12px;
+        font-size: 0.85rem;
+        display: inline-block;
+        word-break: break-word;
+    }
+
+    #purchaseAlert {
+        z-index: 1055;
+        width: 90%;
+        max-width: 720px;
+        margin-top: 20px;
+        transition: all 0.4s ease-in-out;
+    }
+
+    #purchaseAlert.d-none {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    #purchaseAlert.show {
+        opacity: 1;
+    }
+
+    .alert-image {
+        max-height: 200px;
+        object-fit: cover;
+    }
+</style>
+
+<h2 class="mb-4">Purchased Movies</h2>
+
+@if (!Model.Any())
+{
+    <p>You haven't purchased any movies yet.</p>
+}
+else
+{
+    <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-4">
+        @foreach (var movie in Model)
+        {
+            <div class="col">
+                <div class="card h-100 shadow-sm">
+                    <a asp-controller="Movies" asp-action="Details" asp-route-id="@movie.Id">
+                        <img src="@movie.PosterUrl" class="card-img-top" alt="@movie.Title" />
+                    </a>
+                    <div class="card-body bg-dark text-center">
+                        <button type="button" class="btn btn-outline-light btn-sm"
+                                onclick="showPurchaseAlert('@movie.PurchaseDateTime.ToString("MMM dd, yyyy")', 
+                                                       '@movie.TotalPrice.ToString("C")', 
+                                                       '@movie.PurchaseNumber',
+                                                       '@movie.PosterUrl')">
+                            Purchase Details
+                        </button>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+}
+
+<!-- Purchase Details Alert -->
+<div id="purchaseAlert" class="position-fixed top-0 start-50 translate-middle-x bg-white shadow-lg p-4 border rounded d-none">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h5 class="mb-0">
+            <i class="me-2 text-primary"></i>Purchase Details
+        </h5>
+        <button class="btn-close" onclick="hidePurchaseAlert()"></button>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <img id="alertPoster" src="" alt="Poster" class="alert-image w-100 rounded" />
+        </div>
+
+        <div class="col-md-8">
+            <div class="border-bottom pb-2 mb-2">
+                <i class="bi bi-calendar-event me-2"></i><strong>Purchased Date:</strong>
+                <span id="alertDate" class="fact-pill ms-2"></span>
+            </div>
+
+            <div class="border-bottom pb-2 mb-2">
+                <i class="bi bi-currency-dollar me-2"></i><strong>Price:</strong>
+                <span id="alertPrice" class="fact-pill ms-2"></span>
+            </div>
+
+            <div class="border-bottom pb-2">
+                <i class="bi bi-check-circle-fill me-2"></i><strong>Purchase Number:</strong>
+                <span id="alertNumber" class="fact-pill ms-2 text-break"></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function showPurchaseAlert(date, price, number, posterUrl) {
+        document.getElementById("alertDate").innerText = date;
+        document.getElementById("alertPrice").innerText = price;
+        document.getElementById("alertNumber").innerText = number;
+        document.getElementById("alertPoster").src = posterUrl;
+
+        const alert = document.getElementById("purchaseAlert");
+        alert.classList.remove("d-none");
+        alert.classList.add("show");
+
+        alert.scrollIntoView({ behavior: 'smooth' });
+
+        setTimeout(() => {
+            hidePurchaseAlert();
+        }, 10000); 
+    }
+
+    function hidePurchaseAlert() {
+        const alert = document.getElementById("purchaseAlert");
+        alert.classList.remove("show");
+        alert.classList.add("d-none");
+    }
+</script>

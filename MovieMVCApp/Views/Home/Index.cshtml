@@ -1,0 +1,12 @@
+﻿@model IEnumerable<ApplicationCore.Models.MovieCardModel>
+
+<div class="container">
+    <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 g-4">
+        @foreach (var movie in Model)
+        {
+            <div class="col">
+                <partial name="_MovieCard" model="movie" />
+            </div>
+        }
+    </div>
+</div>

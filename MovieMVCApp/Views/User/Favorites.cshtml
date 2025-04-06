@@ -1,0 +1,24 @@
+@model IEnumerable<ApplicationCore.Models.MovieCardModel>
+
+@{
+    ViewData["Title"] = "My Favorites";
+}
+
+<h2 class="mb-4">Favorite Movies</h2>
+
+@if (!Model.Any())
+{
+    <p>You haven't added any favorites yet.</p>
+}
+else
+{
+    <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-4">
+        @foreach (var movie in Model)
+        {
+            <div class="col">
+                <partial name="_MovieCard" model="movie" />
+            </div>
+        }
+    </div>
+
+}

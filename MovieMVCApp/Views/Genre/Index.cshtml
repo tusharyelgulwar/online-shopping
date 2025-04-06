@@ -1,0 +1,20 @@
+@model IEnumerable<Genre>
+
+<h1 class="page-header">Genre List</h1>
+<table class="table">
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+    </tr>
+    </thead>
+    <tbody>
+        @{ foreach (var item in Model) {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+            </tr>
+            }
+        }
+    </tbody>
+</table>

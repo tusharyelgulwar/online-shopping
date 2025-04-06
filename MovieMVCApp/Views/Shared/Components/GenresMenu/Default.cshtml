@@ -1,0 +1,13 @@
+@model IEnumerable<ApplicationCore.Models.GenreModel>
+
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown">
+        Genres
+    </a>
+    <ul class="dropdown-menu">
+        @foreach (var genre in Model)
+        {
+            <li><a class="dropdown-item" href="/movies/genre/@genre.Id">@genre.Name</a></li>
+        }
+    </ul>
+</li>

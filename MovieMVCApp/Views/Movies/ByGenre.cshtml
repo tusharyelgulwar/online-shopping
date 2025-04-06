@@ -1,0 +1,95 @@
+@model IEnumerable<ApplicationCore.Models.MovieCardModel>
+
+@{
+    ViewData["Title"] = "Movies by Genre";
+    var genreId = ViewBag.GenreId;
+    var currentPage = ViewBag.CurrentPage;
+    var sortBy = ViewBag.SortBy;
+    var totalPages = ViewBag.TotalPages;
+    var totalMovies = ViewBag.TotalMovies;
+    int pageSize = 30;
+}
+
+<h2 class="mb-4">Movies</h2>
+
+<!-- Sort Dropdown and Total Count -->
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <p class="text-muted mb-0">
+        Showing @((currentPage - 1) * pageSize + 1)-@Math.Min(currentPage * pageSize, totalMovies) of @totalMovies movies
+    </p>
+    <form method="get" class="d-flex align-items-center">
+        <input type="hidden" name="genreId" value="@genreId" />
+        <label for="sortBy" class="me-2">Sort by:</label>
+        <select name="sortBy" class="form-select w-auto" onchange="this.form.submit()">
+            <option value="title" selected="@("title" == sortBy)">Title</option>
+            <option value="releaseDate" selected="@("releaseDate" == sortBy)">Release Date</option>
+        </select>
+    </form>
+</div>
+
+<!-- Movie Grid -->
+<div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 g-4">
+    @foreach (var movie in Model)
+    {
+        <div class="col">
+            <partial name="_MovieCard" model="movie" />
+        </div>
+    }
+</div>
+
+<!-- Pagination -->
+<nav class="mt-4">
+    <ul class="pagination justify-content-start">
+        @{
+            int maxPagesToShow = 5;
+            int startPage = Math.Max(1, currentPage - maxPagesToShow / 2);
+            int endPage = Math.Min(totalPages, startPage + maxPagesToShow - 1);
+            if (endPage - startPage < maxPagesToShow - 1)
+            {
+                startPage = Math.Max(1, endPage - maxPagesToShow + 1);
+            }
+        }
+
+        <!-- First Page -->
+        <li class="page-item @(currentPage == 1 ? "disabled" : "")">
+            <a class="page-link" href="?genreId=@genreId&page=1&sortBy=@sortBy">&laquo;</a>
+        </li>
+
+        <!-- Previous Page -->
+        <li class="page-item @(currentPage == 1 ? "disabled" : "")">
+            <a class="page-link" href="?genreId=@genreId&page=@(currentPage - 1)&sortBy=@sortBy">&lt;</a>
+        </li>
+
+        @if (startPage > 1)
+        {
+            <li class="page-item disabled"><span class="page-link">...</span></li>
+        }
+
+        @for (int i = startPage; i <= endPage; i++)
+        {
+            <li class="page-item @(i == currentPage ? "active" : "")">
+                <a class="page-link" href="?genreId=@genreId&page=@i&sortBy=@sortBy">@i</a>
+            </li>
+        }
+
+        @if (endPage < totalPages)
+        {
+            <li class="page-item disabled"><span class="page-link">...</span></li>
+        }
+
+        <!-- Total Pages Display -->
+        <li class="page-item">
+            <span class="page-link">@totalPages</span>
+        </li>
+
+        <!-- Next Page -->
+        <li class="page-item @(currentPage == totalPages ? "disabled" : "")">
+            <a class="page-link" href="?genreId=@genreId&page=@(currentPage + 1)&sortBy=@sortBy">&gt;</a>
+        </li>
+
+        <!-- Last Page -->
+        <li class="page-item @(currentPage == totalPages ? "disabled" : "")">
+            <a class="page-link" href="?genreId=@genreId&page=@totalPages&sortBy=@sortBy">&raquo;</a>
+        </li>
+    </ul>
+</nav>

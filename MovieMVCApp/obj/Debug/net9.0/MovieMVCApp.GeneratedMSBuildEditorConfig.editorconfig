@@ -1,0 +1,97 @@
+is_global = true
+build_property.TargetFramework = net9.0
+build_property.TargetFramework = net9.0
+build_property.TargetPlatformMinVersion = 
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = MovieMVCApp
+build_property.RootNamespace = MovieMVCApp
+build_property.ProjectDir = C:\Users\tusha\source\repos\VAFEB\VAFEB2025\OnlineMovieShop\MovieMVCApp\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 9.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\tusha\source\repos\VAFEB\VAFEB2025\OnlineMovieShop\MovieMVCApp
+build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 9.0
+build_property.EnableCodeStyleSeverity = 
+
+[C:/Users/tusha/source/repos/VAFEB/VAFEB2025/OnlineMovieShop/MovieMVCApp/Views/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tusha/source/repos/VAFEB/VAFEB2025/OnlineMovieShop/MovieMVCApp/Views/Account/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tusha/source/repos/VAFEB/VAFEB2025/OnlineMovieShop/MovieMVCApp/Views/Admin/CreateMovie.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ3JlYXRlTW92aWUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tusha/source/repos/VAFEB/VAFEB2025/OnlineMovieShop/MovieMVCApp/Views/Admin/TopMovies.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cVG9wTW92aWVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tusha/source/repos/VAFEB/VAFEB2025/OnlineMovieShop/MovieMVCApp/Views/Genre/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VucmVcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tusha/source/repos/VAFEB/VAFEB2025/OnlineMovieShop/MovieMVCApp/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tusha/source/repos/VAFEB/VAFEB2025/OnlineMovieShop/MovieMVCApp/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tusha/source/repos/VAFEB/VAFEB2025/OnlineMovieShop/MovieMVCApp/Views/Movies/ByGenre.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW92aWVzXEJ5R2VucmUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tusha/source/repos/VAFEB/VAFEB2025/OnlineMovieShop/MovieMVCApp/Views/Movies/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW92aWVzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tusha/source/repos/VAFEB/VAFEB2025/OnlineMovieShop/MovieMVCApp/Views/Shared/Components/GenresMenu/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcR2VucmVzTWVudVxEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tusha/source/repos/VAFEB/VAFEB2025/OnlineMovieShop/MovieMVCApp/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tusha/source/repos/VAFEB/VAFEB2025/OnlineMovieShop/MovieMVCApp/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tusha/source/repos/VAFEB/VAFEB2025/OnlineMovieShop/MovieMVCApp/Views/Shared/_Moviecard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Nb3ZpZWNhcmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tusha/source/repos/VAFEB/VAFEB2025/OnlineMovieShop/MovieMVCApp/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tusha/source/repos/VAFEB/VAFEB2025/OnlineMovieShop/MovieMVCApp/Views/User/Account.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxBY2NvdW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tusha/source/repos/VAFEB/VAFEB2025/OnlineMovieShop/MovieMVCApp/Views/User/Favorites.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxGYXZvcml0ZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tusha/source/repos/VAFEB/VAFEB2025/OnlineMovieShop/MovieMVCApp/Views/User/Purchases.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxQdXJjaGFzZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 

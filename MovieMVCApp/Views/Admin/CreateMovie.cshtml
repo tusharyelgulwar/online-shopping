@@ -1,0 +1,55 @@
+@model ApplicationCore.Entities.Movie
+
+@{
+    ViewData["Title"] = "Create Movie";
+}
+
+<h2 class="mb-4">Add New Movie</h2>
+
+<form asp-action="CreateMovie" method="post">
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label asp-for="Title" class="form-label"></label>
+            <input asp-for="Title" class="form-control" />
+            <span asp-validation-for="Title" class="text-danger"></span>
+        </div>
+
+        <div class="col-md-6 mb-3">
+            <label asp-for="ReleaseDate" class="form-label"></label>
+            <input asp-for="ReleaseDate" class="form-control" placeholder="yyyy-mm-dd" />
+            <span asp-validation-for="ReleaseDate" class="text-danger"></span>
+        </div>
+
+        <div class="col-md-6 mb-3">
+            <label asp-for="PosterUrl" class="form-label"></label>
+            <input asp-for="PosterUrl" class="form-control" />
+            <span asp-validation-for="PosterUrl" class="text-danger"></span>
+        </div>
+
+        <div class="col-md-6 mb-3">
+            <label asp-for="Budget" class="form-label"></label>
+            <input asp-for="Budget" class="form-control" />
+            <span asp-validation-for="Budget" class="text-danger"></span>
+        </div>
+
+        <div class="col-md-6 mb-3">
+            <label asp-for="Revenue" class="form-label"></label>
+            <input asp-for="Revenue" class="form-control" />
+            <span asp-validation-for="Revenue" class="text-danger"></span>
+        </div>
+
+        <div class="col-md-12 mb-3">
+            <label asp-for="Overview" class="form-label"></label>
+            <textarea asp-for="Overview" class="form-control" rows="4"></textarea>
+            <span asp-validation-for="Overview" class="text-danger"></span>
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">
+        <i class="bi bi-plus-circle"></i> Create
+    </button>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

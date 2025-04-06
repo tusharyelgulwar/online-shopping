@@ -1,0 +1,23 @@
+@model ApplicationCore.Models.UserProfileModel
+
+@{
+    ViewData["Title"] = "My Account";
+}
+
+<h2 class="mb-4">My Account</h2>
+
+<div class="card shadow-sm p-4">
+    <dl class="row">
+        <dt class="col-sm-3">First Name</dt>
+        <dd class="col-sm-9">@Model.FirstName</dd>
+
+        <dt class="col-sm-3">Last Name</dt>
+        <dd class="col-sm-9">@Model.LastName</dd>
+
+        <dt class="col-sm-3">Email</dt>
+        <dd class="col-sm-9">@Model.Email</dd>
+
+        <dt class="col-sm-3">Date of Birth</dt>
+        <dd class="col-sm-9">@Model.DateOfBirth.ToString("MMMM dd, yyyy")</dd>
+    </dl>
+</div>

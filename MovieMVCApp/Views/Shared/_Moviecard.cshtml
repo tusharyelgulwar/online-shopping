@@ -1,0 +1,9 @@
+@model ApplicationCore.Models.MovieCardModel
+
+<div class="movie-card text-center">
+    <a asp-controller="Movies" asp-action="Details" asp-route-id="@Model.Id">
+        <img src="@Model.PosterUrl" alt="@Model.Title"
+             class="img-fluid rounded shadow-sm mb-2"
+             style="height: 300px; object-fit: cover;" />
+    </a>
+</div>
